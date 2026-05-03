@@ -1,0 +1,81 @@
+.bar {
+  display: flex;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn:hover:not(.active) {
+  background: #f8fafc;
+}
+
+.btn.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.3);
+}
+
+.emoji {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.btn.active .label {
+  color: #fff;
+}
+
+.count {
+  font-size: 11px;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-radius: 20px;
+  padding: 1px 7px;
+  min-width: 22px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.count.countActive {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 420px) {
+  .emoji {
+    display: none;
+  }
+
+  .btn {
+    padding: 8px 8px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,98 @@
+.appBg {
+  min-height: 100vh;
+  background: #f0f2f8;
+  position: relative;
+}
+
+/* ── Main card ────────────────────────────── */
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* ── Header ───────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.logoIcon {
+  font-size: 26px;
+  color: #fff;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ── Sections ─────────────────────────────── */
+.section {
+  margin-bottom: 18px;
+}
+
+/* ── Footer ───────────────────────────────── */
+.footer {
+  text-align: center;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.footerHighlight {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 640px) {
+  .main {
+    padding: 28px 16px 48px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .logoWrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logoIcon {
+    font-size: 22px;
+  }
+}
