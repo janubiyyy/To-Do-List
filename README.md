@@ -1,73 +1,115 @@
-# React + TypeScript + Vite
+# TaskFlow – Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi To-Do List sederhana yang dibangun menggunakan **React** dan **TypeScript** sebagai bagian dari _technical test_ Front-End Developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📋 Fitur
 
-## React Compiler
+- ✅ Menampilkan daftar task dari API
+- ➕ Menambahkan task baru
+- 🔄 Update status task (done / undone)
+- 🗑️ Menghapus task
+- 🔍 Filter task: **All** / **Pending** / **Completed**
+- 📊 Statistik ringkasan + progress bar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) – build tool
+- CSS Modules – scoped styling
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) – mock REST API
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Cara Menjalankan
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prasyarat
+
+Pastikan sudah terinstall di komputer:
+
+- [Node.js](https://nodejs.org/) versi **18** atau lebih baru
+- npm (sudah termasuk bersama Node.js)
+
+Cek versi dengan perintah berikut:
+
+```bash
+node -v
+npm -v
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Langkah-langkah
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**1. Clone repository**
+
+```bash
+git clone https://github.com/janubiyyy/To-Do-List.git
 ```
+
+**2. Masuk ke folder project**
+
+```bash
+cd To-Do-List
+```
+
+**3. Install dependencies**
+
+```bash
+npm install
+```
+
+**4. Jalankan development server**
+
+```bash
+npm run dev
+```
+
+**5. Buka di browser**
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📁 Struktur Folder
+
+```
+src/
+├── types/
+│   └── task.types.ts          # Type & interface definitions
+├── services/
+│   └── taskService.ts         # API calls (JSONPlaceholder)
+├── hooks/
+│   └── useTasks.ts            # Custom hook – state & logic
+└── components/
+    ├── AddTaskForm/            # Form tambah task baru
+    ├── FilterBar/              # Tab filter (All / Pending / Completed)
+    ├── StatsBar/               # Ringkasan statistik & progress
+    ├── TaskItem/               # Komponen item task individual
+    ├── TaskList/               # Daftar task + skeleton + empty state
+    └── Toast/                  # Notifikasi error
+```
+
+---
+
+## 🔗 API
+
+Menggunakan [JSONPlaceholder](https://jsonplaceholder.typicode.com/todos) sebagai mock API.
+
+| Method | Endpoint               | Keterangan         |
+|--------|------------------------|--------------------|
+| GET    | `/todos?_limit=10`     | Ambil daftar task  |
+| POST   | `/todos`               | Tambah task baru   |
+| PATCH  | `/todos/:id`           | Update status task |
+| DELETE | `/todos/:id`           | Hapus task         |
+
+> **Catatan:** JSONPlaceholder adalah mock API, sehingga perubahan data (POST/PATCH/DELETE) tidak benar-benar tersimpan di server. State dikelola secara lokal dengan _optimistic update_.
+
+---
+
+Made with ❤️ by **Tasya Khaerani Janubiya**
